@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../reducers/user';
 const { useRouter } = require('next/router');
+import styles from '../../styles/DesignSystem.module.css'
 
 export default function Logout() {
   const router = useRouter()
@@ -16,14 +17,11 @@ export default function Logout() {
   }
   
   return (
-    <>
-      <div>
-        {firstname}
+    <div className={styles.logout}>
+      <div class={styles.userInfos}>
+        {firstname} @{lastname}
       </div>
-      <div>
-        {lastname}
-      </div>
-      <button onClick={() => handleClick()}>LOGOUT</button>
-    </>
+      <button className={styles.btnTertiary} onClick={() => handleClick()}>Logout</button>
+    </div>
   )
 }
