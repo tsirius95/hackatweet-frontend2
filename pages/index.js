@@ -9,12 +9,18 @@ import { useDispatch, useSelector } from 'react-redux';
 export default function index() {
   const router = useRouter()
   const user = useSelector((state) => state.user.value)
-  if (user.token !== null) router.push("/home")
-  return (
-    <div>
-        <Login/>
-        <Link href="/home">Go to home page</Link>
-        <Link href="/hashtag">Go to hashtag page</Link>
-    </div>
-  )
+  if (user.token !== null) {
+    router.push("/home")
+  } else {
+    return (
+      <>
+      <div>
+          <Login/>
+          <Link href="/home">Go to home page</Link>
+          <Link href="/hashtag">Go to hashtag page</Link>
+      </div>
+      </>
+    )
+  }
+
 }

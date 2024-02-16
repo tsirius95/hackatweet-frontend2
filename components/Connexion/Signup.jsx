@@ -30,7 +30,7 @@ export default function Signup() {
       }).then(response => response.json())
         .then(data => {
           if (data.result) {
-            dispatch(login({ token: data.token,firstname: data.firstname, lastname : data.lastname }));
+            dispatch(login({ token: data.token, firstname: data.firstname, lastname : data.lastname }));
             setSignUpFirstname('');
             setSignUpLastname('');
             setSignUpEmail('');
