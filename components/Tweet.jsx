@@ -47,8 +47,13 @@ export default function Tweet(props) {
     color: '#71767c'
   }
 
+  const iconTrash = {
+    size: 20,
+    color: '#D8072D'
+  }
+
   if (compteur >= 1) {
-		iconLike.color = '#E9BE59' ;
+		iconLike.color = '#EE4B6A' ;
 	}
 
   /*
@@ -80,7 +85,7 @@ export default function Tweet(props) {
                 </div>
                 {compteur}
           </div>
-          {props.token === token && <div className={styles.icon} onClick={() => handleDeleteClick()}>
+          {props.token === token && <div className={styles.iconTrash} onClick={() => handleDeleteClick()}>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M21 6.72998C20.98 6.72998 20.95 6.72998 20.92 6.72998C15.63 6.19998 10.35 5.99998 5.12001 6.52998L3.08001 6.72998C2.66001 6.76998 2.29001 6.46998 2.25001 6.04998C2.21001 5.62998 2.51001 5.26998 2.92001 5.22998L4.96001 5.02998C10.28 4.48998 15.67 4.69998 21.07 5.22998C21.48 5.26998 21.78 5.63998 21.74 6.04998C21.71 6.43998 21.38 6.72998 21 6.72998Z" fill="#292D32"/>
               <path d="M8.49999 5.72C8.45999 5.72 8.41999 5.72 8.36999 5.71C7.96999 5.64 7.68999 5.25 7.75999 4.85L7.97999 3.54C8.13999 2.58 8.35999 1.25 10.69 1.25H13.31C15.65 1.25 15.87 2.63 16.02 3.55L16.24 4.85C16.31 5.26 16.03 5.65 15.63 5.71C15.22 5.78 14.83 5.5 14.77 5.1L14.55 3.8C14.41 2.93 14.38 2.76 13.32 2.76H10.7C9.63999 2.76 9.61999 2.9 9.46999 3.79L9.23999 5.09C9.17999 5.46 8.85999 5.72 8.49999 5.72Z" fill="#292D32"/>
