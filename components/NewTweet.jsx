@@ -8,7 +8,7 @@ export default function NewTweet() {
 
   const user = useSelector((state) => state.user.value);
 
-  const [postTweet, setPostTweet] = useState('');
+  const [postTweet, setPostTweet] = useState([]);
 
 /*   const handlePostTweet = () => {
 		fetch(`http://localhost:3000/tweets/${user.token}`, {
@@ -28,7 +28,10 @@ export default function NewTweet() {
     fetch(`http://localhost:3000/tweets/re1oHsRNPRjDkbkw7RFPX7_ABcDr_XCr`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json'},
-      body: JSON.stringify({ content: postTweet }), // Send the tweet content
+      body: JSON.stringify({ 
+        token: re1oHsRNPRjDkbkw7RFPX7_ABcDr_XCr,
+        content: content,
+      }), // Send the tweet content
     })
     .then(response => response.json())
     .then(data => {
@@ -41,7 +44,7 @@ export default function NewTweet() {
     });
   };
 
-  const checkLength =  postTweet.length;
+  const checkLength = postTweet.length;
 
 
   return (
