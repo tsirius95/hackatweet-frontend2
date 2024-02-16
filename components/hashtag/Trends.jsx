@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { topHashtags } from '../../modules/topHashTags';
+import styles from "../../styles/DesignSystem.module.css";
 
 export default function Trends() {
     
@@ -19,15 +20,16 @@ export default function Trends() {
     const trends = dataTrends.map((el) => {
         console.log(el)
         console.log("toto")    
-        return <div>
-                <div>{el.hashtag}</div>
-                <div>{el.nbOccurence}</div>
+        return <div className={styles.infoTrend}>
+                <div className={styles.hashtag}>#{el.hashtag}</div>
+                <div className={styles.Ocu}>{el.nbOccurence} tweets</div>
             </div>
     })
 
     return (
-        <>
+        <div className={styles.TrendContainer}>
+        <h4 className={styles.yeah}>Trends</h4>
         {trends}
-        </>
+        </div>
     )
 }

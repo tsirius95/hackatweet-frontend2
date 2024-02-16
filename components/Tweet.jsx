@@ -89,12 +89,12 @@ export default function Tweet(props) {
               <path d="M14.5 13.25H9.5C9.09 13.25 8.75 12.91 8.75 12.5C8.75 12.09 9.09 11.75 9.5 11.75H14.5C14.91 11.75 15.25 12.09 15.25 12.5C15.25 12.91 14.91 13.25 14.5 13.25Z" fill="#292D32"/>
             </svg>
           </div>}
-          <div className={styles.iconLike} onClick={() => handleBookmarkClick()}>
+          {/* <div className={styles.iconLike} onClick={() => handleBookmarkClick()}>
             <svg xmlns="http://www.w3.org/2000/svg" width={iconBookmark.size} height={iconBookmark.size} viewBox="0 0 24 24" fill="none">
               <path d="M16.82 2H7.18001C5.05001 2 3.32001 3.74 3.32001 5.86V19.95C3.32001 21.75 4.61001 22.51 6.19001 21.64L11.07 18.93C11.59 18.64 12.43 18.64 12.94 18.93L17.82 21.64C19.4 22.52 20.69 21.76 20.69 19.95V5.86C20.68 3.74 18.95 2 16.82 2Z" stroke={iconBookmark.color} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M16.82 2H7.18001C5.05001 2 3.32001 3.74 3.32001 5.86V19.95C3.32001 21.75 4.61001 22.51 6.19001 21.64L11.07 18.93C11.59 18.64 12.43 18.64 12.94 18.93L17.82 21.64C19.4 22.52 20.69 21.76 20.69 19.95V5.86C20.68 3.74 18.95 2 16.82 2Z" stroke={iconBookmark.color} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-          </div>
+       </div> */}   
         </div>
       </div>
 
