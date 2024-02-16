@@ -5,13 +5,30 @@ import Head from 'next/head';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import user from '../reducers/user';
+import bookmarks from '../reducers/bookmarks';
 
 
 import { persistStore, persistReducer } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
-import storage from 'redux-persist/lib/storage';
+import createWebStorage from "redux-persist/lib/storage/createWebStorage";
 
-const reducers = combineReducers({ user });
+const createNoopStorage = () => {
+    return {
+        getItem() {
+            return Promise.resolve(null);
+        },
+        setItem(value) {
+            return Promise.resolve(value);
+        },
+        removeItem() {
+            return Promise.resolve();
+        },
+    };
+};
+
+const storage = typeof window !== "undefined" ? createWebStorage("local") : createNoopStorage();
+
+const reducers = combineReducers({ user, bookmarks });
 
 const persistConfig = { key: 'hackaTweet', storage };
 

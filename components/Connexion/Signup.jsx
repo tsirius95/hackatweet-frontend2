@@ -2,6 +2,7 @@ import React from 'react'
 
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import {useRouter} from 'next/router'
 
 import { login } from '../../reducers/user';
 import Link from 'next/link';
@@ -9,6 +10,7 @@ import Link from 'next/link';
 import styles from '../../styles/DesignSystem.module.css'
 
 export default function Signup() {
+  const router = useRouter()
 
 	const dispatch = useDispatch();
 	const user = useSelector((state) => state.user.value);
@@ -21,20 +23,21 @@ export default function Signup() {
 
 
   const handleRegister = () => {
-		fetch('http://localhost:3000/users/signup', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ firstname: signUpFirstname, lastname: signUpLastname, email: signupEmail, password: signUpPassword }),
-		}).then(response => response.json())
-			.then(data => {
-				if (data.result) {
-					dispatch(login({ token: data.token }));
-					setSignUpFirstname('');
-          setSignUpLastname('');
-          setSignUpEmail('');
-					setSignUpPassword('');
-				}
-			});
+      fetch('http://localhost:3000/users/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ firstname: signUpFirstname, lastname: signUpLastname, email: signupEmail, password: signUpPassword }),
+      }).then(response => response.json())
+        .then(data => {
+          if (data.result) {
+            dispatch(login({ token: data.token }));
+            setSignUpFirstname('');
+            setSignUpLastname('');
+            setSignUpEmail('');
+            setSignUpPassword('');
+            router.push("/home")
+          }
+        });
 	};
 
 

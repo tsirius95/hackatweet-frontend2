@@ -5,19 +5,21 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../reducers/user';
+import {useRouter} from 'next/router'
 
 import styles from '../../styles/DesignSystem.module.css'
 
 
 export default function Signin() {
+	const router = useRouter()
 
-  const dispatch = useDispatch();
+ 	const dispatch = useDispatch();
 	const user = useSelector((state) => state.user.value);
 
-  const [signinEmail, setSignInEmail] = useState('');
+	const [signinEmail, setSignInEmail] = useState('');
 	const [signInPassword, setSignInPassword] = useState('');
 
-  const handleConnection = () => {
+	const handleConnection = () => {
 
 		fetch('http://localhost:3000/users/signin', {
 			method: 'POST',
@@ -29,6 +31,7 @@ export default function Signin() {
 					dispatch(login({ token: data.token }));
 					setSignInEmail('');
 					setSignInPassword('');
+					router.push("/home")
 				}
 			});
 	};

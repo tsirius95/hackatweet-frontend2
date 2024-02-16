@@ -17,7 +17,7 @@ export default function Hashtag() {
     }, [hashtag]);
 
     const hashtags = hashtagData.map((data, i) => {
-        return <Tweet key={i} firstname={data.user.firstname} lastname={data.user.lastname} date={data.date} content={data.content}/>
+        return <Tweet key={i} firstname={data.user.firstname} lastname={data.user.lastname} date={data.date} content={data.content} like={data.like}/>
     });
 
     return (
