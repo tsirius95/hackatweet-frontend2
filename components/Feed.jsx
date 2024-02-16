@@ -10,7 +10,6 @@ export default function Feed() {
   const bookmarks = useSelector((state) => state.bookmarks.value);
   const [tweetsData, setTweetsData] = useState([]);
   const [postTweet, setPostTweet] = useState('');
-  const [isLiked, setIsLiked] = useState(false);
   const [id, setId] = useState("");
   const [like, setLike] = useState("")
 
@@ -21,7 +20,6 @@ export default function Feed() {
       .then(data => {
         let sortedData = data.tweets.sort((a, b) => new Date(b.date) - new Date(a.date))
         setTweetsData(sortedData);
-        setIsLiked(true);
       });
   }, [postTweet, id, like]);
 
@@ -47,15 +45,16 @@ export default function Feed() {
     setLike(id)
   }
 
+
   const checkLength = postTweet.length;
   
   const tweets = tweetsData.map((data, i) => {
       return <div>
-          <Tweet key={i} deleteTweet={deleteTweet} addLike={addLike} id={data._id} token= {data.user.token} firstname={data.user.firstname} lastname={data.user.lastname} date={data.date} content={data.content} isLiked={isLiked} like={data.like}/>
+          <Tweet key={i} deleteTweet={deleteTweet} addLike={addLike} id={data._id} 
+          token= {data.user.token} firstname={data.user.firstname} lastname={data.user.lastname} 
+          date={data.date} content={data.content} like={data.like}/>
         </div>
   });
-
-  const sortedTweet = tweets.sort()
 
   return (
     <div className={styles.feedContainer}>

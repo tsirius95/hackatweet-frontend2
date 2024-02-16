@@ -11,26 +11,9 @@ export default function Tweet(props) {
 
   const token = useSelector((state) => state.user.value.token);
   const dispatch = useDispatch();
-  const [date, setDate] = useState('2050-11-22T23:59:59');
   const [isLiked, setIsLiked] = useState(false);
   const [nbLike, setNbLike] = useState(0);
   const compteur = props.like.length;
-
-  const handleBookmarkClick = () => {
-		fetch(`http://localhost:3000/tweets/${token}`)
-			.then(response => response.json())
-			.then(data => {
-				if (data.result) {
-					if (props.isBookmarked) {
-            console.log('Je suis')
-						dispatch(removeBookmark(props));
-					} else {
-            console.log('donc je suis')
-						dispatch(addBookmark(props));
-					}
-				}
-			});
-	}
 
   const handleLikeClick = () => {
 		fetch(`http://localhost:3000/tweets/like`, {
@@ -64,17 +47,15 @@ export default function Tweet(props) {
     color: '#71767c'
   }
 
-  useEffect(() => {
-		setDate(new Date());
-	}, []);
-
-	if (isLiked) {
+  if (compteur >= 1) {
 		iconLike.color = '#E9BE59' ;
 	}
-  
+
+  /*
   if (props.isBookmarked) {
     iconBookmark.color = '#E9BE59' ;
   }
+  */
 
   return (
 
