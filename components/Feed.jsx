@@ -72,7 +72,9 @@ export default function Feed() {
         </div>
       </div>
     </div>
-      {tweets}
+      <div className={styles.scrollTweet}>
+        {tweets}
+      </div>
     </div>
   )
 }

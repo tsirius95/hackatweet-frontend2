@@ -14,9 +14,7 @@ export default function Home() {
 
     <div className={styles.layout}>
       <Navbar/>
-      <div className={styles.feedContainer}>
-        <Feed/>
-      </div>
+      <Feed/>
       <SidebarRight/>
     </div>
   )
