@@ -2,6 +2,7 @@ import React from 'react';
 import Tweet from "../Tweet";
 import { useEffect, useState } from 'react';
 import styles from "../../styles/DesignSystem.module.css";
+import Logout from '../Connexion/Logout';
 
 export default function Hashtag() {
 
@@ -22,6 +23,7 @@ export default function Hashtag() {
 
     return (
         <> 
+            <Logout></Logout>
             <div className={styles.feedContainer}>
                 <div className={styles.searchContainer}>
                     <div>HASHTAG</div>
