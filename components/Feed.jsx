@@ -1,32 +1,29 @@
 import React from 'react'
-
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
 import styles from '../styles/DesignSystem.module.css'
-
 import Tweet from './Tweet';
 
 export default function Feed() {
 
   const token = useSelector((state) => state.user.value.token)
-
   const bookmarks = useSelector((state) => state.bookmarks.value);
-
   const [tweetsData, setTweetsData] = useState([]);
   const [postTweet, setPostTweet] = useState('');
   const [isLiked, setIsLiked] = useState(false);
   const [id, setId] = useState("");
+  const [like, setLike] = useState("")
 
 
   useEffect(() => {
     fetch('http://localhost:3000/tweets')
       .then(response => response.json())
       .then(data => {
-        setTweetsData(data.tweets);
+        let sortedData = data.tweets.sort((a, b) => new Date(b.date) - new Date(a.date))
+        setTweetsData(sortedData);
         setIsLiked(true);
       });
-  }, [postTweet, id]);
+  }, [postTweet, id, like]);
 
   const handlePostTweet = () => {
     fetch('http://localhost:3000/tweets', {
@@ -42,19 +39,23 @@ export default function Feed() {
     });
   };
 
-
   const deleteTweet = (id) => {
     setId(id)
   };
 
+  const addLike = (id) => {
+    setLike(id)
+  }
+
   const checkLength = postTweet.length;
   
   const tweets = tweetsData.map((data, i) => {
-    const isBookmarked = bookmarks.some(user => user.token === user.token);
       return <div>
-          <Tweet key={i} deleteTweet={deleteTweet} id={data._id} token= {data.user.token} firstname={data.user.firstname} lastname={data.user.lastname} date={data.date} content={data.content} isBookmarked={isBookmarked} isLiked={isLiked} like={data.like}/>
+          <Tweet key={i} deleteTweet={deleteTweet} addLike={addLike} id={data._id} token= {data.user.token} firstname={data.user.firstname} lastname={data.user.lastname} date={data.date} content={data.content} isLiked={isLiked} like={data.like}/>
         </div>
   });
+
+  const sortedTweet = tweets.sort()
 
   return (
     <div className={styles.feedContainer}>

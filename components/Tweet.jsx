@@ -14,7 +14,6 @@ export default function Tweet(props) {
   const [date, setDate] = useState('2050-11-22T23:59:59');
   const [isLiked, setIsLiked] = useState(false);
   const [nbLike, setNbLike] = useState(0);
-  const [isDeleteVisible, setIsDeleteVisible] = useState(false);
   const compteur = props.like.length;
 
   const handleBookmarkClick = () => {
@@ -34,20 +33,17 @@ export default function Tweet(props) {
 	}
 
   const handleLikeClick = () => {
-		fetch(`http://localhost:3000/tweets/${token}`)
+		fetch(`http://localhost:3000/tweets/like`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json'},
+      body: JSON.stringify({ idTweet: props.id, token: token }),
+       })
 			.then(response => response.json())
 			.then(data => {
-        if (data.result) {
-          if (!isLiked){
-            setIsLiked(true)
-            setNbLike(nbLike + 1);
-          }
-          if (isLiked){
-            setIsLiked(false)
-            setNbLike(nbLike - 1);
-          }
-        }
-		});
+          console.log(data.tweet)
+      }
+		);
+    props.addLike(props.id)
 	}
 
   const handleDeleteClick = () => {
