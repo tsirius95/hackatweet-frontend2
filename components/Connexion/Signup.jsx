@@ -66,7 +66,7 @@ export default function Signup() {
 
       </div>
 
-      <button className={styles.btn} id="connection" onClick={() => handleRegister()}>Create account</button>
+      <button className={styles.btnPrimary} id="connection" onClick={() => handleRegister()}>Create account</button>
     </div>
   )
 }

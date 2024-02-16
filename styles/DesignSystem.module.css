@@ -21,6 +21,12 @@
   padding: 12px;
 }
 
+.btnPrimary:hover {
+  cursor: pointer;
+  background-color: rgb(22, 117, 180)
+}
+
+
 .btnSecondary {
   font-size: 17px;
   font-weight: 700;
@@ -31,6 +37,11 @@
   padding: 12px;
 }
 
+.btnSecondary:hover {
+  cursor: pointer;
+  background-color: rgba(159, 160, 162)
+}
+
 .btnTertiary {
   font-size: 17px;
   font-weight: 700;
@@ -39,6 +50,11 @@
   background-color: transparent;
   border-radius: 9999px;
   padding: 12px;
+}
+
+.btnTertiary:hover {
+  cursor: pointer;
+  color: rgb(22, 117, 180);
 }
 
 .loginContainer {

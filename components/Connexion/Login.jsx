@@ -56,7 +56,7 @@ export default function Login() {
           </Modal>
         </div>
         <div className={styles.signin}>
-          <div>Already have an account?</div>
+          <div className={styles.label}>Already have an account?</div>
           <button className={styles.btnTertiary} onClick={showModalIn}>Sign In</button>
           <Modal open={isSignIn} onOk={handleOkIn} onCancel={handleCancelIn} footer={null}>
             <Signin />

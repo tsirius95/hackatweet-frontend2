@@ -50,7 +50,7 @@ export default function Signin() {
         </div>
 			</div>
 
-      <button className={styles.btn} id="connection" onClick={() => handleConnection()}>Connect</button>
+      <button className={styles.btnSecondary} id="connection" onClick={() => handleConnection()}>Connect</button>
     </div>
 
   )

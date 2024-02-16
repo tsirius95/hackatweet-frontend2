@@ -42,7 +42,6 @@ $xxlargeSpace: 80px;
 
 // BUTTON // 
 .btnPrimary {
-
     font-size: $cta;
     font-weight: 700;
     background-color: $primary-color;
@@ -52,10 +51,12 @@ $xxlargeSpace: 80px;
     padding: $mediumSpace;
 
     &:hover {
-        background-color: yellow;
-      }
-      
+        cursor: pointer;
+        background-color: $neutral3;
+    }
+     
 }
+
 .btnSecondary {
 
     font-size: $cta;
@@ -87,7 +88,7 @@ loginContainer {
     color: $neutral0;
   
     .formContainer {
-      width: 40%;
+      width: 20%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -95,7 +96,6 @@ loginContainer {
       font-weight: 700;
   
       .claim {
-        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -141,19 +141,39 @@ loginContainer {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         margin-top: $xxlargeSpace;
+
+        .label {
+            width: 100%;
+        }
       }
     }
   }
 
+
+  
 .modalContainer {
 
-    display: flex;
-    flex-direction: column;
-    background: rgba(255, 255, 255, 0.02);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(9.4px);
-    -webkit-backdrop-filter: blur(9.4px);
+      
+      .newStyle {
+        display: flex;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.02);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(9.4px);
+        -webkit-backdrop-filter: blur(9.4px);
+      }
+      
+      /* applied style to its root properties, but no change */
+      .ant-modal-content {
+        display: flex;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.02);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(9.4px);
+        -webkit-backdrop-filter: blur(9.4px);
+      }
 
         .inputs {
 
@@ -197,20 +217,23 @@ loginContainer {
 
 // PAGE HOME //
 .layout {
-    
+
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    overflow: hidden;
+
 }
 
 // NAVBAR //
 
 .navbarContainer {
-
+    top: 0;
+    left: 0;
+    position: fixed;
     width: 30vw;
     padding: $xlargeSpace;
-
-    display: flex;
-    flex-direction: column;
+    height: 100vh; // Remplir toute la hauteur de l'écran
+    overflow-y: auto;
 
     .linkContainer {
 
@@ -248,20 +271,22 @@ loginContainer {
 // FEED //
 
 .feedContainer {
-
-    width: 40vw;
+    flex: 1;
+    width: 50%;
     display: flex;
     flex-direction: column;
-    
+    overflow-y: auto; // Ajouter une barre de défilement si nécessaire
+    padding-top: $xlargeSpace;
     // CARD WRITE TWEET //
     .newTweetContainer {
+        bottom: 0;
+    left: 0;
+        position: fixed;
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         padding: 64px $largeSpace $largeSpace $largeSpace;
-        display: flex;
-        flex-direction: column;
         background: rgba(255, 255, 255, 0.02);
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(9.4px);
@@ -377,12 +402,13 @@ loginContainer {
 
 // SIDEBARRIGTH //
 .sidebarContainer {
-
+    top: 0;
+    right: 0;
+    position: fixed;
     width: 30vw;
     padding: $xlargeSpace;
-
-    display: flex;
-    flex-direction: column;
+    height: 100vh;
+    overflow-y: auto;
 
     .bgContainer {
 
