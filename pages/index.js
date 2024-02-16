@@ -10,6 +10,7 @@ export default function index() {
     <>
         <Login/>
         <Link href="/home">Go to home page</Link>
+        <Link href="/hashtag">Go to hashtag page</Link>
     </>
   )
 }

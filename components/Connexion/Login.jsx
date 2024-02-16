@@ -49,6 +49,10 @@ export default function Login() {
           <button className={styles.btnPrimary} onClick={showModalUp}>Create account</button>
           <Modal open={isSignUp} onOk={handleOkUp} onCancel={handleCancelUp} footer={null}>
             <Signup />
+            <span>Already have an account?</span><span onClick={() => {
+              handleCancelUp();
+              showModalIn();
+            }}> Sign In</span>
           </Modal>
         </div>
         <div className={styles.signin}>
@@ -56,6 +60,10 @@ export default function Login() {
           <button className={styles.btnTertiary} onClick={showModalIn}>Sign In</button>
           <Modal open={isSignIn} onOk={handleOkIn} onCancel={handleCancelIn} footer={null}>
             <Signin />
+            <span>Don't have an account?</span><span onClick={() => {
+              handleCancelIn();
+              showModalUp();
+            }}> Register</span>
           </Modal>
         </div>
       </div>

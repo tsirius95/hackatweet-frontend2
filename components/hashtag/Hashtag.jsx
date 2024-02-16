@@ -1,7 +1,7 @@
 import React from 'react';
 import Tweet from "../Tweet";
 import { useEffect, useState } from 'react';
-import styles from "./Styles/Hashtag.module.css"
+import styles from "../../styles/DesignSystem.module.css";
 
 export default function Hashtag() {
 
@@ -22,7 +22,7 @@ export default function Hashtag() {
 
     return (
         <> 
-            <div className={styles.container}>
+            <div className={styles.feedContainer}>
                 <div className={styles.searchContainer}>
                     <div>HASHTAG</div>
                     <input className={styles.hashtagSearch} type='text' onChange={(e) => setHashtag(e.target.value)}/>

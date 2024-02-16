@@ -64,7 +64,6 @@ export default function Signup() {
       </div>
 
       <button className={styles.btn} id="connection" onClick={() => handleRegister()}>Create account</button>
-      <p>Already have an account?<Link href="/Signin"> Sign In</Link></p>
     </div>
   )
 }

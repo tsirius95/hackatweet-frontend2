@@ -52,8 +52,6 @@ export default function Signin() {
 			</div>
 
       <button className={styles.btn} id="connection" onClick={() => handleConnection()}>Connect</button>
-      <p>Don't have an account?<Link href="/Signup"> Register</Link></p>
-
     </div>
 
   )
