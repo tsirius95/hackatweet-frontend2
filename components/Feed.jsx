@@ -9,11 +9,14 @@ import Tweet from './Tweet';
 
 export default function Feed() {
 
+  const token = useSelector((state) => state.user.value.token)
+
   const bookmarks = useSelector((state) => state.bookmarks.value);
 
   const [tweetsData, setTweetsData] = useState([]);
   const [postTweet, setPostTweet] = useState('');
   const [isLiked, setIsLiked] = useState(false);
+  const [id, setId] = useState("");
 
 
   useEffect(() => {
@@ -23,11 +26,7 @@ export default function Feed() {
         setTweetsData(data.tweets);
         setIsLiked(true);
       });
-  }, [postTweet]);
-
-
-
-  let token = 're1oHsRNPRjDkbkw7RFPX7_ABcDr_XCr';
+  }, [postTweet, id]);
 
   const handlePostTweet = () => {
     fetch('http://localhost:3000/tweets', {
@@ -38,10 +37,14 @@ export default function Feed() {
     .then(response => response.json())
     .then(data => {
       if (data.result) {
-        console.log(postTweet)
         setPostTweet('');
       }
     });
+  };
+
+
+  const deleteTweet = (id) => {
+    setId(id)
   };
 
   const checkLength = postTweet.length;
@@ -49,10 +52,9 @@ export default function Feed() {
   const tweets = tweetsData.map((data, i) => {
     const isBookmarked = bookmarks.some(user => user.token === user.token);
       return <div>
-          <Tweet key={i} id={data._id} firstname={data.user.firstname} lastname={data.user.lastname} date={data.date} content={data.content} isBookmarked={isBookmarked} isLiked={isLiked} like={data.like}/>
+          <Tweet key={i} deleteTweet={deleteTweet} id={data._id} token= {data.user.token} firstname={data.user.firstname} lastname={data.user.lastname} date={data.date} content={data.content} isBookmarked={isBookmarked} isLiked={isLiked} like={data.like}/>
         </div>
   });
-
 
   return (
     <div className={styles.feedContainer}>
