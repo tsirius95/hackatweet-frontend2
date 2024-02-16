@@ -3,6 +3,7 @@ import styles from '../../styles/DesignSystem.module.css'
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Modal, Button } from 'antd';
+import { useRouter } from 'next/router'
 import Signup from './Signup'
 import Signin from './Signin'
 
