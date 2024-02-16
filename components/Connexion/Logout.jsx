@@ -1,27 +1,29 @@
-import useSelection from 'antd/es/table/hooks/useSelection'
 import React from 'react'
-import { UseSelector, useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../reducers/user';
-import { useRouter } from 'next/router'
+const { useRouter } = require('next/router');
 
 export default function Logout() {
-
-  const user = useSelector(((state) => state.user.value))
+  const router = useRouter()
+  const dispatch = useDispatch()
+  
+  const firstname = useSelector(((state) => state.user.value.firstname))
+  const lastname = useSelector(((state) => state.user.value.lastname))
 
   const handleClick = () => {
     dispatch(logout())
-    router.push("/home")
+    router.push("/")
   }
   
   return (
     <>
       <div>
-        {user.firstname}
+        {firstname}
       </div>
       <div>
-        {user.lastname}
+        {lastname}
       </div>
-      <button onClick={() => handleClick()}></button>
+      <button onClick={() => handleClick()}>LOGOUT</button>
     </>
   )
 }
