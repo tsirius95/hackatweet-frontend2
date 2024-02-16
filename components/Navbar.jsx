@@ -3,6 +3,7 @@ import React from 'react'
 import Link from 'next/link';
 
 import styles from '../styles/DesignSystem.module.css'
+import Logout from '../components/Connexion/Logout';
 
 export default function Navbar() {
 
@@ -27,7 +28,7 @@ export default function Navbar() {
       </div>
       <div className={styles.linkContainer}>
 
-        <div className={styles.buttonNav}>
+        {/* <div className={styles.buttonNav}>
           <div className={styles.icon}>
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none">
               <path d="M12 2C9.38 2 7.25 4.13 7.25 6.75C7.25 9.32 9.26 11.4 11.88 11.49C11.96 11.48 12.04 11.48 12.1 11.49C12.12 11.49 12.13 11.49 12.15 11.49C12.16 11.49 12.16 11.49 12.17 11.49C14.73 11.4 16.74 9.32 16.75 6.75C16.75 4.13 14.62 2 12 2Z" fill="#292D32"/>
@@ -55,9 +56,10 @@ export default function Navbar() {
             </svg>
           </div>
           <Link href="../profile"><span className={styles.link}>Profile</span></Link>
-        </div>
+        </div> */}
 
       </div>
+      <Logout/>
     </div>
   )
 }
