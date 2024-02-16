@@ -1,12 +1,9 @@
 import React from 'react'
-
 import Link from 'next/link';
-
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../reducers/user';
-import {useRouter} from 'next/router'
-
+import { useRouter } from 'next/router'
 import styles from '../../styles/DesignSystem.module.css'
 
 
@@ -14,7 +11,6 @@ export default function Signin() {
 	const router = useRouter()
 
  	const dispatch = useDispatch();
-	const user = useSelector((state) => state.user.value);
 
 	const [signinEmail, setSignInEmail] = useState('');
 	const [signInPassword, setSignInPassword] = useState('');
