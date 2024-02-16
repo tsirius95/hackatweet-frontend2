@@ -1,0 +1,393 @@
+
+// FONT SIZE //
+$smallDisplay : 40px;
+$title: 20px;
+$cta: 17px;
+$body: 15px;
+$label: 13px;
+
+// COLORs //
+$primary-color: #1d9bf1;
+$neutral4: #0a0b0d;
+$neutral3: #16181c;
+$neutral2: #2f3336;
+$neutral1: #71767c;
+$neutral0: #e8e9ea;
+
+// ESPACEMENT //
+$xsmallSpace: 4px;
+$smallSpace: 8px;
+$mediumSpace: 12px;
+$largeSpace: 24px;
+$xlargeSpace: 32px;
+$xxlargeSpace: 80px;
+
+// ATOME //
+.avatar {
+
+    width: 40px;
+    height: 40px;
+
+    margin-right: $mediumSpace;
+
+    img {
+        width: 100%;
+        height: 100%;
+
+        border-radius: 100%;
+
+        object-fit: cover;
+    }
+}
+
+// BUTTON // 
+.btnPrimary {
+
+    font-size: $cta;
+    font-weight: 700;
+    background-color: $primary-color;
+    color: $neutral0;
+    border: none;
+    border-radius: 9999px;
+    padding: $mediumSpace;
+}
+.btnSecondary {
+
+    font-size: $cta;
+    font-weight: 700;
+    background-color: $neutral0;
+    color: $neutral4;
+    border: none;
+    border-radius: 9999px;
+    padding: $mediumSpace;
+}
+.btnTertiary {
+
+    font-size: $cta;
+    font-weight: 700;
+    color: $primary-color;
+    border: 1px solid $neutral1;
+    background-color: transparent;
+    border-radius: 9999px;
+    padding: $mediumSpace;
+}
+
+// LOGIN //
+.loginContainer {
+
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: $neutral0;
+
+        .formContainer {
+
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+
+
+            background-color: $neutral3;
+            font-weight: 700;
+
+            .claim {
+                display: flex;
+                flex-direction: column;
+
+                margin-bottom: $xxlargeSpace;
+
+                h1 {
+                    font-size: 6rem;
+                    margin: 0%;
+                }
+
+                .subtitle {
+                    font-size: 3rem;
+                }
+            }
+
+            .signup {
+                display: flex;
+                flex-direction: column;
+
+            margin-bottom: $xxlargeSpace;
+                .separator {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+    
+                    margin: $smediumSpace 0;
+    
+                    .line {
+                        width: 50%;
+                        height: 1px;
+                        border: 1px solid $neutral2
+                    }
+    
+                    .or {
+                        margin: 0 $mediumSpace;
+                    }
+                }
+            }
+
+            .signin {
+                display: flex;
+                flex-direction: column;
+
+                margin-top: $xxlargeSpace;
+            }
+
+        }
+        
+}
+
+.modalContainer {
+
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.02);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.4px);
+    -webkit-backdrop-filter: blur(9.4px);
+
+        .inputs {
+
+            display: flex;
+            flex-direction: column;
+
+            .inputContainer {
+
+                display: flex;
+                flex-direction: column;
+
+                label {
+
+                    margin-bottom: 8px;
+
+                    font-size: 12px;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                }
+
+                input {
+
+                    padding: 12px 8px;
+
+                    border: none;
+                    border-radius: 16px;
+
+                    margin-bottom: 24px;
+                }
+            }
+        }
+
+        .btn {
+
+            height: 48px;
+            border-radius: 80px;
+        }
+
+        
+}
+
+// PAGE HOME //
+.layout {
+    
+    display: flex;
+    flex-wrap: wrap;
+}
+
+// NAVBAR //
+
+.navbarContainer {
+
+    width: 20vw;
+    padding: $xlargeSpace;
+
+    display: flex;
+    flex-direction: column;
+
+    .linkContainer {
+
+        display: flex;
+        flex-direction: column;
+
+        .buttonNav {
+
+            height: 32px;
+            padding: 24px;
+
+            display: flex;
+            align-items: center;
+
+            color: $neutral0;
+
+            .icon {
+
+                margin-right: 16px;
+                font-size: 24px;
+
+            }
+
+            .link {
+
+                font-size: 24px;
+
+            }
+
+        }
+
+    }
+}
+
+// FEED //
+
+.feedContainer {
+
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    
+    // CARD WRITE TWEET //
+    .newTweetContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 64px $largeSpace $largeSpace $largeSpace;
+        display: flex;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.02);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(9.4px);
+        -webkit-backdrop-filter: blur(9.4px);
+
+        .block {
+            width: 100%;
+
+            .userPosting {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                margin-bottom: $largeSpace;
+
+                .input {
+                    width: 100%;
+                    font-size: $title;
+                    background-color: transparent;
+                    color: $neutral1;
+                    border: none;
+                }
+
+            }
+
+            .postAction {
+                display: flex;
+                align-items: center;
+                color: $neutral1;
+
+                .check {
+                    
+                    width: 100%;
+                    margin-right: $smallSpace;
+
+                    font-size: $label;
+                    text-align: end;
+                }
+            }
+
+
+        }
+    
+    }
+
+    // CARD TWEET //
+    .tweetCard {
+    
+        width: 100%;
+    
+        display: flex;
+        align-items: flex-start;
+    
+        padding: $largeSpace;
+    
+        font-size: $body;
+        color: $neutral0;
+    
+        border-top: 1px solid $neutral2;
+    
+    
+        .userContainer {
+    
+            width: 100%;
+    
+            display: flex;
+            flex-direction: column;
+    
+            .userInfos {
+    
+                display: flex;
+                margin-bottom: $xsmallSpace;
+        
+                .pseudo {
+        
+                    font-weight: 700;
+                    margin-right: $xsmallSpace;
+                }
+        
+                .info {
+                    color: $neutral1;
+                }
+            }
+    
+        }
+    
+        .interactionsContainer {
+    
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+    
+            margin-top: $mediumSpace;
+            color: $neutral1;
+            font-size: $label;
+    
+            .iconCounter {
+                
+                display: flex;
+                align-items: center;
+    
+            }
+            .icon {
+                margin-right: $xsmallSpace;
+    
+            }
+        }
+      
+    }
+}
+
+
+
+
+// SIDEBARRIGTH //
+.sidebarContainer {
+
+    width: 20vw;
+    padding: $xlargeSpace;
+
+    display: flex;
+    flex-direction: column;
+
+    .bgContainer {
+
+        background-color: $neutral3;
+        color: $neutral0;
+
+        padding: $largeSpace;
+    }
+}

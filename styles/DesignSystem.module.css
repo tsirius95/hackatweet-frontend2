@@ -1,0 +1,249 @@
+.avatar {
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.btnPrimary {
+  font-size: 17px;
+  font-weight: 700;
+  background-color: #1d9bf1;
+  color: #e8e9ea;
+  border: none;
+  border-radius: 9999px;
+  padding: 12px;
+}
+
+.btnSecondary {
+  font-size: 17px;
+  font-weight: 700;
+  background-color: #e8e9ea;
+  color: #0a0b0d;
+  border: none;
+  border-radius: 9999px;
+  padding: 12px;
+}
+
+.btnTertiary {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1d9bf1;
+  border: 1px solid #71767c;
+  background-color: transparent;
+  border-radius: 9999px;
+  padding: 12px;
+}
+
+.loginContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e8e9ea;
+}
+.loginContainer .formContainer {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+}
+.loginContainer .formContainer .claim {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 80px;
+}
+.loginContainer .formContainer .claim h1 {
+  font-size: 6rem;
+  margin: 0%;
+}
+.loginContainer .formContainer .claim .subtitle {
+  font-size: 3rem;
+}
+.loginContainer .formContainer .signup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 80px;
+}
+.loginContainer .formContainer .signup .separator {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+}
+.loginContainer .formContainer .signup .separator .line {
+  width: 50%;
+  height: 1px;
+  border: 1px solid #2f3336;
+}
+.loginContainer .formContainer .signup .separator .or {
+  margin: 0 12px;
+}
+
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.4px);
+  -webkit-backdrop-filter: blur(9.4px);
+}
+.modalContainer .inputs {
+  display: flex;
+  flex-direction: column;
+}
+.modalContainer .inputs .inputContainer {
+  display: flex;
+  flex-direction: column;
+}
+.modalContainer .inputs .inputContainer label {
+  margin-bottom: 8px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.modalContainer .inputs .inputContainer input {
+  padding: 12px 8px;
+  border: none;
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
+.modalContainer .btn {
+  height: 48px;
+  border-radius: 80px;
+}
+
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navbarContainer {
+  width: 20vw;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+}
+.navbarContainer .linkContainer {
+  display: flex;
+  flex-direction: column;
+}
+.navbarContainer .linkContainer .buttonNav {
+  height: 32px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  color: #e8e9ea;
+}
+.navbarContainer .linkContainer .buttonNav .icon {
+  margin-right: 16px;
+  font-size: 24px;
+}
+.navbarContainer .linkContainer .buttonNav .link {
+  font-size: 24px;
+}
+
+.feedContainer {
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+}
+.feedContainer .newTweetContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 64px 24px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.4px);
+  -webkit-backdrop-filter: blur(9.4px);
+}
+.feedContainer .newTweetContainer .block {
+  width: 100%;
+}
+.feedContainer .newTweetContainer .block .userPosting {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.feedContainer .newTweetContainer .block .userPosting .input {
+  width: 100%;
+  font-size: 20px;
+  background-color: transparent;
+  color: #71767c;
+  border: none;
+}
+.feedContainer .newTweetContainer .block .postAction {
+  display: flex;
+  align-items: center;
+  color: #71767c;
+}
+.feedContainer .newTweetContainer .block .postAction .check {
+  width: 100%;
+  margin-right: 8px;
+  font-size: 13px;
+  text-align: end;
+}
+.feedContainer .tweetCard {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  padding: 24px;
+  font-size: 15px;
+  color: #e8e9ea;
+  border-top: 1px solid #2f3336;
+}
+.feedContainer .tweetCard .userContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.feedContainer .tweetCard .userContainer .userInfos {
+  display: flex;
+  margin-bottom: 4px;
+}
+.feedContainer .tweetCard .userContainer .userInfos .pseudo {
+  font-weight: 700;
+  margin-right: 4px;
+}
+.feedContainer .tweetCard .userContainer .userInfos .info {
+  color: #71767c;
+}
+.feedContainer .tweetCard .interactionsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  color: #71767c;
+  font-size: 13px;
+}
+.feedContainer .tweetCard .interactionsContainer .iconCounter {
+  display: flex;
+  align-items: center;
+}
+.feedContainer .tweetCard .interactionsContainer .icon {
+  margin-right: 4px;
+}
+
+.sidebarContainer {
+  width: 20vw;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+}
+.sidebarContainer .bgContainer {
+  background-color: #16181c;
+  color: #e8e9ea;
+  padding: 24px;
+}/*# sourceMappingURL=DesignSystem.module.css.map */

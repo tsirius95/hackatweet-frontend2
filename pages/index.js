@@ -1,7 +1,15 @@
-import Home from '../components/Home';
+import React from 'react'
 
-function Index() {
-  return <Home />;
+import Link from 'next/link';
+
+// IMPORT COMPONENT //
+import Login from '../components/Connexion/Login';
+
+export default function index() {
+  return (
+    <>
+        <Login/>
+        <Link href="/home">Go to home page</Link>
+    </>
+  )
 }
-
-export default Index;
