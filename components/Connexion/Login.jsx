@@ -39,7 +39,7 @@ export default function Login() {
           <div className={styles.subtitle}>Join today.</div>
         </div>
 
-        <div className={styles.signin}> 
+        <div className={styles.signup}> 
           <button className={styles.btnSecondary}>Connexion with Google</button>
           <div className={styles.separator}>
             <div className={styles.line}></div>

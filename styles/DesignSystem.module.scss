@@ -50,6 +50,11 @@ $xxlargeSpace: 80px;
     border: none;
     border-radius: 9999px;
     padding: $mediumSpace;
+
+    &:hover {
+        background-color: yellow;
+      }
+      
 }
 .btnSecondary {
 
@@ -73,77 +78,73 @@ $xxlargeSpace: 80px;
 }
 
 // LOGIN //
-.loginContainer {
-
+loginContainer {
     width: 100vw;
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-
+    justify-content: center; // Centrage vertical
+    align-items: center; // Centrage horizontal
     color: $neutral0;
-
-        .formContainer {
-
-            width: 40%;
-            display: flex;
-            flex-direction: column;
-
-
-            background-color: $neutral3;
-            font-weight: 700;
-
-            .claim {
-                display: flex;
-                flex-direction: column;
-
-                margin-bottom: $xxlargeSpace;
-
-                h1 {
-                    font-size: 6rem;
-                    margin: 0%;
-                }
-
-                .subtitle {
-                    font-size: 3rem;
-                }
-            }
-
-            .signup {
-                display: flex;
-                flex-direction: column;
-
-            margin-bottom: $xxlargeSpace;
-                .separator {
-                    width: 100%;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-    
-                    margin: $smediumSpace 0;
-    
-                    .line {
-                        width: 50%;
-                        height: 1px;
-                        border: 1px solid $neutral2
-                    }
-    
-                    .or {
-                        margin: 0 $mediumSpace;
-                    }
-                }
-            }
-
-            .signin {
-                display: flex;
-                flex-direction: column;
-
-                margin-top: $xxlargeSpace;
-            }
-
+  
+    .formContainer {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: $neutral3;
+      font-weight: 700;
+  
+      .claim {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: $xxlargeSpace;
+  
+        h1 {
+          font-size: 6rem;
+          margin: 0%;
         }
-        
-}
+  
+        .subtitle {
+          font-size: 3rem;
+        }
+      }
+  
+      .signup {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: $xxlargeSpace;
+  
+        .separator {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: $smediumSpace 0;
+  
+          .line {
+            height: 1px;
+            border: 1px solid $neutral2;
+          }
+  
+          .or {
+            margin: 0 $mediumSpace;
+          }
+        }
+      }
+  
+      .signin {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: $xxlargeSpace;
+      }
+    }
+  }
 
 .modalContainer {
 
