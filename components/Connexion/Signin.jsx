@@ -28,7 +28,7 @@ export default function Signin() {
 		}).then(response => response.json())
 			.then(data => {
 				if (data.result) {
-					dispatch(login({ token: data.token }));
+					dispatch(login({ token: data.token, firstname: data.firstname, lastname : data.lastname }));
 					setSignInEmail('');
 					setSignInPassword('');
 					router.push("/home")
